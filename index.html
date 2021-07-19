@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .left {
+            text-align: center;
+            background-color: #2196F3;
+            padding: 20px;
+            float: left;
+            width: 20%;
+        }
+        
+        .center {
+            background-color: #f1f1f1;
+            padding: 20px;
+            float: left;
+            width: 60%;
+            text-align: center;
+        }
+        
+        .right {
+            text-align: center;
+            float: right;
+            background-color: #4caf50;
+            padding: 20px;
+            width: 20%;
+        }
+        
+        .form_building_text_input {
+            text-align: center;
+            float: left;
+            background-color: rgb(173, 135, 209);
+            padding: 20px;
+            width: 20%;
+        }
+        
+        .form_building_select_input {
+            text-align: center;
+            float: left;
+            background-color: rgb(172, 131, 131);
+            padding: 20px;
+            width: 20%;
+        }
+        
+        .form_building_login_input {
+            text-align: center;
+            float: left;
+            background-color: rgb(84, 218, 57);
+            padding: 20px;
+            width: 20%;
+        }
+        
+        .form_building_radio_input {
+            /*text-align: left*/
+            float: left;
+            background-color: rgb(155, 160, 224);
+            padding: 20px;
+            width: 20%;
+        }
+        
+        .form_building_checkbox_input {
+            /*text-align: left*/
+            float: left;
+            background-color: rgb(230, 166, 216);
+            padding: 20px;
+            width: 20%;
+        }
+        
+        #dragdrop1,
+        #dragdrop2 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            .left,
+            .center,
+            .right,
+            .form_building_text_input,
+            .form_building_select_input,
+            .form_building_login_input,
+            .form_building_radio_input,
+            .form_building_checkbox_input {
+                width: 100%;
+                /* The width is 100%, when the viewport is 1000px or smaller */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Media Queries</h2>
+    <p>Resize the browser window.</p>
+
+    <p>Make sure you reach the breakpoint at 1000px when resizing this frame. thử tiếng việt</p>
+    <p></p>
+    <div class="left">
+        <p>Left Menu( trái)</p>
+    </div>
+
+    <div class="center">
+        <p>Main Content</p>
+    </div>
+
+    <div class="right">
+        <p>Right Content</p>
+    </div>
+    <div class="form_building_text_input">
+        <h2>Text input</h2>
+        <form action="/test2.html">
+            <label for="your_name">Your name:</label><br>
+            <input type="text" id="your_name" name="your_name" placeholder="Nguyen Van A" size=""><br>
+            <label for="phone_number">Phone numbers:</label><br>
+            <input type="text" id="phone_numbers" name="your_name" placeholder="0801234567" pattern="[0-9]{,11}"><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+    <div class="form_building_select_input">
+        <h2>Select input</h2>
+        <form action="/test2.html">
+            <label for="mother_language">Your mother language:</label><br>
+            <select id="mother_language" name="mother_language">
+              <option value="vi">Tiếng Việt</option>
+              <option value="en" selected>English</option><!--set as default by using select keyword-->
+              <option value="jp">日本語</option>
+            </select>
+            <input type="submit" value="Choose">
+        </form>
+    </div>
+    <div class="form_building_login_input">
+        <h2>Sign in input</h2>
+        <form action="#" method="POST">
+            <label for="user_name">User name</label><br>
+            <input type="email" id="user_name" name="user_name" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="form_building_radio_input">
+        <h2>Radio input</h2>
+        Select your best field:
+        <form action="#">
+            <!--name must be the same to select only ONE option-->
+            <input type="radio" id="lang_c_sharp" name="program_language" value="lang_c_sharp">
+            <label for="lang_c_sharp">C# .NET Framework</label><br>
+            <input type="radio" id="lang_c" name="program_language" value="lang_c">
+            <label for="lang_c">C, C++</label><br>
+            <input type="radio" id="lang_Web" name="program_language" value="lang_Web">
+            <label for="lang_Web">HTML, CSS, JS</label><br>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="form_building_checkbox_input">
+        <h2>Checkbox input</h2>
+        Select your favorite pets:
+        <form action="#">
+            <!--name must be the same to select only ONE option-->
+            <input type="checkbox" id="dog" name="dog" value="dog">
+            <label for="dog">Dog</label><br>
+            <input type="checkbox" id="cat" name="cat" value="cat">
+            <label for="cat">Cat</label><br>
+            <input type="checkbox" id="horse" name="horse" value="horse">
+            <label for="horse">Horse</label><br>
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <p>this text will be deleted later</p>
+    </div>
+    <div>
+        <p>
+            <br><br><br><br><br>
+        </p>
+        <p>
+            The next part is about canvas<br>
+        </p>
+    </div>
+    <div class="canvas_test">
+        <canvas id="myCanvas1" width="200" height="100" style="border: 1px solid #000000;">
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+        <canvas id="myCanvas2" width="200" height="100" style="border: 1px solid #000000;">
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+        <canvas id="myCanvas3" width="200" height="100" style="border: 1px solid #000000;">
+      Your browser does not support the HTML canvas tag.
+    </canvas>
+
+    </div>
+    <div>
+        <p>Scalable Vector Graphic( SVG)</p>
+        <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" stroke="red" stroke-width="4" fill="blue" /> 
+          Your browser does not support inline sVG.
+        </svg>
+        <svg width="200" height="100">
+          <rect x="0" y="0" rx="20" ry="20" width="200" height="100" stroke="red" stroke-width="10" fill="blue" opacity="0.7" /> 
+          Your browser does not support inline sVG.
+        </svg>
+    </div>
+    <div>
+        <p>Implement a video player</p>
+        <video id="video1" width="400" controls>
+          <source src="video_rango.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video><br>
+        <button onclick="playPause()" id="btnPlayPause">Play</button>
+        <button onclick="makeBig()">Zoom</button>
+        <button onclick="makeNormal()">Normal</button><br>
+
+    </div>
+    <!--youtube video player implement, must be /embed/ to avoid restrict by youtube-->
+    <div>
+        <p>Implement Youtube video</p>
+        <iframe width="400" height="200" src="https://www.youtube.com/embed/2oZNMJwJiuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div>
+        <p><b>Implement a media player</b></p>
+        <audio id="audio1" controls>
+        <source src="lofisound.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio><br>
+    </div>
+
+    <div>
+        <p>Import google map API. Unfortunately we need to link payment account to register key for this service.</p>
+        <iframe src="test_map.html" width="400" height="200"></iframe>
+    </div>
+    <div>
+        <p><b>Drag and drop test.</b><br>Drag the image back and forth between the two div elements.</p>
+        <div id="dragdrop1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="img1.png" draggable="true" ondragstart="drag(event)" id="drag1" width="144">
+        </div>
+        <div id="dragdrop2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+    </div>
+    </div>
+    <div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><b>Counter click test</b></p>
+        <button onclick="clickCounter()" type="button">Click to count</button>
+        <button onclick="startWorker()" type="button">Start Worker</button>
+        <button onclick="stopWorker()" type="button">Stop Worker</button>
+        <div id="clickResult">Clicked 0 times in this session</div>
+        <div id="workerResult">Counted 0 times</div>
+    </div>
+    <!--script region-->
+    <script>
+        var myVideo = document.getElementById("video1");
+
+        function playPause() {
+            if (myVideo.paused) {
+                myVideo.play();
+                myVideo.textContent = "Pause";
+                document.getElementById("btnPlayPause").textContent = "Pause";
+            } else {
+                myVideo.pause();
+                myVideo.textContent = "Play";
+                document.getElementById("btnPlayPause").textContent = "Play";
+            }
+        }
+
+        function makeBig() {
+            myVideo.width = 560;
+        }
+
+        function makeNormal() {
+            myVideo.width = 400;
+        }
+    </script>
+    <script>
+        //draw shape to canvas 1
+        var myCanvas1 = document.getElementById("myCanvas1");
+        var myContext1 = myCanvas1.getContext("2d");
+        myContext1.moveTo(0, 0);
+        myContext1.lineTo(200, 100);
+        myContext1.stroke();
+        myContext1.beginPath();
+        myContext1.arc(100, 50, 50, 0, 2 * Math.PI);
+        myContext1.stroke();
+
+        //draw text to canvas 2
+        var myCanvas2 = document.getElementById("myCanvas2");
+        var myContext2 = myCanvas2.getContext("2d");
+        myContext2.font = "30px MS Gothic";
+        myContext2.fillText("Hello there", 10, 50);
+
+        //draw color gradient to canvas 3
+        var myCanvas3 = document.getElementById("myCanvas3");
+        var myContext3 = myCanvas3.getContext("2d");
+
+        //create gradient
+        var myGradient = myContext3.createLinearGradient(0, 0, 100, 100);
+        //var myGradient = myContext3.createLinearGradient(0, 0, 200, 0);
+        myGradient.addColorStop(0, "red");
+        myGradient.addColorStop(0.5, "yellow");
+        myGradient.addColorStop(1, "green");
+        myContext3.fillStyle = myGradient;
+        myContext3.fillRect(10, 10, 180, 80);
+    </script>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <script>
+        function clickCounter() {
+            if (typeof(Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("clickResult").innerHTML = "Clicked " + sessionStorage.clickcount + " times in this session";
+                //document.getElementById("clickResult").textContent=
+            } else {
+                document.getElementById("clickResult").innerHTML = "Your browser does not support web storage.";
+            }
+        }
+    </script>
+    <script id="worker1" type="javascript/worker">
+        self.onmessage = function(e) { self.postMessage('msg from worker'); }; var i=0; function timedCount(){ i=i+1; postMessage(i); setTimeout("timedCount()",500); } timedCount();
+    </script>
+    <script>
+        var blob = new Blob([
+            document.querySelector('#worker1').textContent
+        ], {
+            type: "text/javascript"
+        })
+
+        // Note: window.webkitURL.createObjectURL() in Chrome 10+.
+        var worker = new Worker(window.URL.createObjectURL(blob));
+        worker.onmessage = function(e) {
+            console.log("Received: " + e.data);
+        }
+        worker.postMessage("hello"); // Start the worker.
+        var w;
+
+        function startWorker() {
+            if (typeof(Worker) !== "undefined") {
+                if (typeof(w) == "undefined") {
+                    //w = new Worker("demo_workers.js");
+                    w = new Worker(window.URL.createObjectURL(blob));
+                }
+                w.onmessage = function(event) {
+                    document.getElementById("workerResult").innerHTML = event.data;
+                };
+            } else {
+                document.getElementById("workerResult").innerHTML = "Your browser does not support Web Workers.";
+            }
+        }
+
+        function stopWorker() {
+            w.terminate();
+            w = undefined;
+        }
+    </script>
+</body>
+
+</html>
