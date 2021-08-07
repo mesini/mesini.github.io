@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Contact me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="icon" href="../../img/ico1.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/b9e84abb43.js"></script>
+    <style>
+        #my-nav {
+            margin: 0;
+            background-color: #2e1e33;
+            justify-content: center;
+        }
+        
+        #my-nav ul li a {
+            color: #d8d7d7;
+        }
+        
+        #my-nav ul li a:hover {
+            color: white;
+            -webkit-transition: color 0.1s;
+            transition: color 0.1s;
+        }
+        
+        .xaviniLogoHover img {
+            opacity: .8;
+            transition: .3s ease-in-out;
+        }
+        
+        .xaviniLogoHover img:hover {
+            opacity: 1;
+        }
+        
+        #prefer-language {
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            text-decoration: none;
+            padding: 12px;
+            display: inline-block;
+            color: #352626;
+            text-align: center;
+        }
+        /* The Modal (background) */
+        
+        .language-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        /* Modal Content */
+        
+        .language-modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 10px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: left;
+            background-color: #2e1e33;
+            color: #d8d7d7;
+        }
+        
+        .language-modal-content li {
+            list-style-type: none;
+            padding: 0.1em;
+        }
+        
+        .language-modal-content li:hover {
+            color: white;
+            -webkit-transition: color 0.1s;
+            transition: color 0.1s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Navigation Bar Begin-->
+    <nav class="navbar navbar-inverse" id="my-nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                <a class="navbar-brand hover11 active xaviniLogoHover" href="#"><img src="../../img/ico1.ico" width="20em" height="20em" id="home-ico" alt="Home" /></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Samples</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Meow</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-user-plus fa-lg"></i> Sign up</a></li>
+                    <li><a href="#"><i class="fa fa-sign-in fa-lg"></i> Log in</a></li>
+                    <li><a href="#" onclick="changeLanguages()"><i class="fa fa-globe fa-lg"> EN</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="myModal" class="language-modal">
+        <!-- Language prefer modal content -->
+        <div class="language-modal-content">
+            <ul>
+                <li id="vn">
+                    TIẾNG VIỆT
+                </li>
+                <li id="en">
+                    ENGLISH
+                </li>
+                <li id="jp">
+                    日本語
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--script region-->
+    <script>
+        // Get the language-modal
+        var modal = document.getElementById("myModal");
+
+        function changeLanguages() {
+            modal.style.display = "block";
+        }
+        // When the user clicks anywhere outside of the language-modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <!--Navigation Bar End-->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <div class="row no-gutters mb-5">
+                            <div class="col-md-7">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 class="mb-4">Contact Me</h3>
+                                    <div id="form-message-warning" class="mb-4"></div>
+                                    <div id="form-message-success" class="mb-4">
+                                        Your message was sent, thank you!
+                                    </div>
+                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">Full Name</label>
+                                                    <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="label" for="email">Email Address</label>
+                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="subject">Subject</label>
+                                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="label" for="#">Message</label>
+                                                    <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" value="Send Message" class="btn btn-primary">
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-5 d-flex align-items-stretch">
+                                <div id="map">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-map-marker"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Address:</span> Japan, Gifu ken, Tokishi </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-phone"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Phone:</span> <a href="tel://08099875491">+81 08099875491</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-paper-plane"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Email:</span> <a href="mailto:ngducha762@gmail.com">ngducha762@gmail.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-globe"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Website</span> <a href="nguyenducha.com">nguyenducha.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
