@@ -13,7 +13,7 @@
 
     <style>
         #welcome-title {
-            margin-top: 0px;
+            margin-top: 50px;
             display: block;
             background-color: #b0b6bb;
             padding: 5px;
@@ -26,6 +26,34 @@
             color: white;
             -webkit-transition: color 0.2s;
             transition: color 0.2s;
+        }
+        
+        .mySlides {
+            display: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        
+        .w3-display-left {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            transform: translate(0%, -50%);
+            -ms-transform: translate(-0%, -50%)
+        }
+        
+        .w3-display-right {
+            position: absolute;
+            top: 50%;
+            right: 0%;
+            transform: translate(0%, -50%);
+            -ms-transform: translate(0%, -50%)
+        }
+        
+        .w3-display-container {
+            position: relative
         }
     </style>
     <link rel="icon" href="assets/img/ico1.ico" type="image/x-icon">
@@ -70,47 +98,70 @@
     <div id="top-popup">
         <a href="assets/common/meow-page.html" id="welcome-title" title="Welcome to meow meow family shop">Hi there, thank you for visiting xavini page. Click here to take a look at meow family shop (^.^)</a>
     </div>
+    <h3>What is news</h3>
+    <div class="w3-display-container">
+        <img class="mySlides" src="https://picsum.photos/300/200?image=244">
+        <img class="mySlides" src="https://picsum.photos/300/200?image=1024">
+        <img class="mySlides" src="https://picsum.photos/300/200?image=611">
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+
+        function autoSlide() {
+            plusDivs(1);
+            setTimeout("autoSlide()", 5000);
+        }
+        window.onload = autoSlide;
+    </script>
+
     <div class="container">
-        <h3>Main content</h3>
-        <p>still processing
-            <p></p>
-            <div class="hover08 column">
-                <div>
-                    <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
-                    <span>Hover</span>
-                </div>
-                <div>
-                    <figure><img src="https://picsum.photos/300/200?image=1024" /></figure>
-                    <span>Hover</span>
-                </div>
-                <div>
-                    <figure><img src="https://picsum.photos/300/200?image=611" /></figure>
-                    <span>Hover</span>
-                </div>
-            </div>
-            <div class="form_building_text_input">
-                <h2>Text input</h2>
-                <form action="/test2.html">
-                    <label for="your_name">Your name:</label><br>
-                    <input type="text" id="your_name" name="your_name" placeholder="Nguyen Van A" size=""><br>
-                    <label for="phone_number">Phone numbers:</label><br>
-                    <input type="text" id="phone_numbers" name="your_name" placeholder="0801234567" pattern="[0-9]{,11}"><br>
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Reset">
-                </form>
-            </div>
-            <div class="form_building_select_input">
-                <h2>Select input</h2>
-                <form action="/test2.html">
-                    <label for="mother_language">Your mother language:</label><br>
-                    <select id="mother_language" name="mother_language">
+
+        <div class="form_building_text_input">
+            <h2>Text input</h2>
+            <form action="/test2.html">
+                <label for="your_name">Your name:</label><br>
+                <input type="text" id="your_name" name="your_name" placeholder="Nguyen Van A" size=""><br>
+                <label for="phone_number">Phone numbers:</label><br>
+                <input type="text" id="phone_numbers" name="your_name" placeholder="0801234567" pattern="[0-9]{,11}"><br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+        <div class="form_building_select_input">
+            <h2>Select input</h2>
+            <form action="/test2.html">
+                <label for="mother_language">Your mother language:</label><br>
+                <select id="mother_language" name="mother_language">
                       <option value="vi">Tiếng Việt</option>
                       <option value="en" selected>English</option><!--set as default by using select keyword-->
                       <option value="jp">日本語</option>
                     </select>
-                    <input type="submit" value="Choose">
-                </form>
-            </div>
+                <input type="submit" value="Choose">
+            </form>
+        </div>
     </div>
 
 </body>
