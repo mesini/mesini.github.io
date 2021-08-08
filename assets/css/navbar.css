@@ -5,28 +5,35 @@
 }
 
 #my-nav ul li a {
-    color: #d8d7d7;
+    color: #d7d7d7;
 }
 
 #my-nav ul li a:hover {
-    color: white;
+    color: #ffffff;
     -webkit-transition: color 0.1s;
     transition: color 0.1s;
 }
 
+#my-nav .active {
+    color: #c0c0c0;
+}
+
+#my-nav .active:hover {
+    color: #c0c0c0;
+}
+
+
+}
 #my-nav .navbar-toggle {
     border: 0px solid transparent;
 }
-
 #my-nav .navbar-toggle .icon-bar {
-    background-color: #d8d7d7
+    background-color: #d7d7d7
 }
-
 #my-nav .hover-collapse-button:focus,
 #my-nav .hover-collapse-button:hover {
     background-color: #2e1e33;
 }
-
 #my-nav .hover-collapse-button:hover .icon-bar {
     background-color: white;
     -webkit-transition: background-color 0.2s ease-out;
@@ -34,26 +41,21 @@
     -o-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out;
 }
-
 .xaviniLogoHover img {
     opacity: .8;
     transition: .3s ease-in-out;
 }
-
 .xaviniLogoHover img:hover {
     opacity: 1;
 }
-
 #my-nav .dropdown-menu {
     background-color: #2e1e33;
 }
-
 #my-nav .dropdown-menu li a {
-    color: #d8d7d7;
+    color: #d7d7d7;
 }
-
 #my-nav .dropdown-menu li a:hover {
-    color: white;
+    color: #ffffff;
     background-color: #2e1e33;
     -webkit-transition: color 0.1s;
     transition: color 0.1s;
