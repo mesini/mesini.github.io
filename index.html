@@ -8,12 +8,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/b9e84abb43.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="assets/css/news.css" />
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <style>
         #welcome-title {
-            margin-top: 50px;
+            margin-top: 30px;
+            margin-bottom: 5px;
             display: block;
             background-color: #b0b6bb;
             padding: 5px;
@@ -56,7 +62,8 @@
             position: relative
         }
     </style>
-    <link rel="icon" href="assets/img/ico1.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/xavini.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -69,7 +76,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-                <a class="navbar-brand xaviniLogoHover active" href="/"><img src="assets/img/ico1.ico" width="20em" height="20em" id="home-ico" alt="Home" /></a>
+                <a class="navbar-brand xaviniLogoHover active" href="/"><img src="assets/img/xavini.ico" width="20em" height="20em" id="home-ico" alt="Home" /></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -95,75 +102,98 @@
         </div>
     </nav>
     <!--Navigation Bar End-->
-    <div id="top-popup">
+    <div id="top-popup" style="margin-bottom: -15px;">
         <a href="assets/common/meow-page.html" id="welcome-title" title="Welcome to meow meow family shop">Hi there, thank you for visiting xavini page. Click here to take a look at meow family shop (^.^)</a>
     </div>
-    <h3>What is news</h3>
-    <div class="w3-display-container">
-        <img class="mySlides" src="https://picsum.photos/300/200?image=244">
-        <img class="mySlides" src="https://picsum.photos/300/200?image=1024">
-        <img class="mySlides" src="https://picsum.photos/300/200?image=611">
-        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    <div class="top-title">
+        <h3>What is news</h3>
     </div>
-
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-
-        function autoSlide() {
-            plusDivs(1);
-            setTimeout("autoSlide()", 5000);
-        }
-        window.onload = autoSlide;
-    </script>
-
-    <div class="container">
-
-        <div class="form_building_text_input">
-            <h2>Text input</h2>
-            <form action="/test2.html">
-                <label for="your_name">Your name:</label><br>
-                <input type="text" id="your_name" name="your_name" placeholder="Nguyen Van A" size=""><br>
-                <label for="phone_number">Phone numbers:</label><br>
-                <input type="text" id="phone_numbers" name="your_name" placeholder="0801234567" pattern="[0-9]{,11}"><br>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
-            </form>
+    <!--flexbox header news-->
+    <div class="cards">
+        <div class="card">
+            <iframe class="card-image" width="100%" src="https://www.youtube.com/embed/2oZNMJwJiuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay" allowfullscreen></iframe>
+            <div class="card-content">
+                <div class="card-top">
+                    <h5 class="card-title">Portrait with colour pencil</h5>
+                    <div class="card-user-profile">Drawing</div>
+                    <div class="card-user">
+                        <img src="assets/img/ha-nguyen.jpg" alt="" class="card-user-avatar" />
+                        <div class="card-user-info">
+                            <div class="card-user-top">
+                                <h4 class="card-user-name">Xavini</h4>
+                                <ion-icon name="checkmark-circle"></ion-icon>
+                            </div>
+                            <div class="card-user-profile">Hobbyist</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form_building_select_input">
-            <h2>Select input</h2>
-            <form action="/test2.html">
-                <label for="mother_language">Your mother language:</label><br>
-                <select id="mother_language" name="mother_language">
-                      <option value="vi">Tiếng Việt</option>
-                      <option value="en" selected>English</option><!--set as default by using select keyword-->
-                      <option value="jp">日本語</option>
-                    </select>
-                <input type="submit" value="Choose">
-            </form>
+        <div class="card">
+            <img src="assets/img/unplash-imgs/dmitry-chernyshov-mP7aPSUm7aE-unsplash.jpg" alt="" class="card-image" />
+            <div class="card-content">
+                <div class="card-top">
+                    <h5 class="card-title">
+                        Macbook Pro 2020 M1 Preview
+                    </h5>
+                    <div class="card-user-profile">Tech, Electronic</div>
+                    <div class="card-user">
+                        <img src="assets/img/ha-nguyen.jpg" alt="" class="card-user-avatar" />
+                        <div class="card-user-info">
+                            <div class="card-user-top">
+                                <h4 class="card-user-name">Xavini</h4>
+                                <ion-icon name="checkmark-circle"></ion-icon>
+                            </div>
+                            <div class="card-user-profile">Tech geek</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/unplash-imgs/karl-pawlowicz-QUHuwyNgSA0-unsplash.jpg" alt="" class="card-image" />
+            <div class="card-content">
+                <div class="card-top">
+                    <h5 class="card-title">
+                        How I build this page<br><br>
+                    </h5>
+                    <div class="card-user-profile">Tutorials, Programming</div>
+                    <div class="card-user">
+                        <img src="assets/img/ha-nguyen.jpg" alt="" class="card-user-avatar" />
+                        <div class="card-user-info">
+                            <div class="card-user-top">
+                                <h4 class="card-user-name">Xavini</h4>
+                                <ion-icon name="checkmark-circle"></ion-icon>
+                            </div>
+                            <div class="card-user-profile">Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card">
+            <img src="assets/img/unplash-imgs/eggbank-gtySYFUP0ls-unsplash 2.jpg" alt="" class="card-image" />
+            <div class="card-content">
+                <div class="card-top">
+                    <h5 class="card-title">Explore Hiroshima during Obon Matsuri</h5>
+
+                    <div class="card-user-profile">Travel, Explore</div>
+                    <div class="card-user">
+                        <img src="assets/img/ha-nguyen.jpg" alt="" class="card-user-avatar" />
+                        <div class="card-user-info">
+                            <div class="card-user-top">
+                                <h4 class="card-user-name">Xavini</h4>
+                                <ion-icon name="checkmark-circle"></ion-icon>
+                            </div>
+                            <div class="card-user-profile">Traveller</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>
