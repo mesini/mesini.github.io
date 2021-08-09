@@ -222,7 +222,7 @@ body {
 }
 
 .cards {
-    --spacing: 25px;
+    --spacing: 15px;
     --columns: 4;
     display: flex;
     flex-wrap: wrap;
@@ -237,7 +237,7 @@ body {
 
 @media screen and (max-width: 767px) {
     .cards {
-        --spacing: 25px;
+        --spacing: 15px;
         --columns: 2;
     }
 }
