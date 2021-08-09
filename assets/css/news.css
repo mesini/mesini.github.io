@@ -275,6 +275,13 @@ body {
     word-break: break-word;
 }
 
+.card-title-tag {
+    display: flex;
+    color: #999;
+    font-weight: 300;
+    font-size: 13px;
+}
+
 .card-user {
     display: flex;
     align-items: center;
@@ -329,7 +336,8 @@ body {
 }
 
 .card-user,
-.card-bottom {
+.card-bottom,
+.card-title-tag {
     margin-top: auto;
     flex-shrink: 0;
 }
