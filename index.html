@@ -11,11 +11,15 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="assets/css/news.css" />
+    <link rel="stylesheet" href="assets/css/contents.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <style>
         #welcome-title {
             margin-top: 30px;
@@ -67,7 +71,7 @@
 </head>
 
 <body>
-    <!--Navigation Bar Begin-->
+    <!--Navigation Bar Region Begin-->
     <nav class="navbar navbar-fixed-top navbar-inverse " id="my-nav">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -101,20 +105,22 @@
             </div>
         </div>
     </nav>
-    <!--Navigation Bar End-->
-    <div id="top-popup" style="margin-bottom: -15px;">
+    <!--Navigation Bar Region End-->
+    <div id="top-popup" style="margin-bottom: 0px;">
         <a href="assets/common/meow-page.html" id="welcome-title" title="Welcome to meow meow family shop">Hi there, thank you for visiting xavini page. Click here to take a look at meow family shop (^.^)</a>
     </div>
     <div class="top-title">
         <h3>What is news</h3>
     </div>
-    <!--flexbox header news-->
+    <!--News Region Begin-->
     <div class="cards">
         <div class="card">
             <iframe class="card-image" width="100%" src="https://www.youtube.com/embed/2oZNMJwJiuw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay" allowfullscreen></iframe>
             <div class="card-content">
                 <div class="card-top">
+
                     <h5 class="card-title">Portrait with colour pencil</h5>
+
                     <div class="card-title-tag">Drawing</div>
                     <div class="card-user">
                         <img src="assets/img/ha-nguyen.jpg" alt="" class="card-user-avatar" />
@@ -194,6 +200,50 @@
             </div>
         </div>
     </div>
+    <!--News Region End-->
+    <div class="top-title">
+        <h3>Meow things</h3>
+    </div>
+    <!--Content Region Begin-->
+    <div class="contents">
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
+        </div>
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="" />
+        </div>
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1446329813274-7c9036bd9a1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
+        </div>
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" alt="" />
+        </div>
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
+        </div>
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
+        </div>
+        <div class="content-item">
+            <img src="https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
+        </div>
+    </div>
+    <!--Content Region End-->
+    <script>
+        $('.cards').on('mousedown mouseup', function mouseState(e) {
+            if (e.type == "mousedown") {
+                //code triggers on hold
+                x1 = e.pageX;
+                console.log("x1: " + x1.toString());
+            }
+            if (e.type == "mouseup") {
+                //code triggers on release
+                let x2 = e.pageX;
+                console.log("x2: " + x2);
+                console.log("sub: " + (x2 - x1));
+            }
+        });
+    </script>
 </body>
 
 </html>
